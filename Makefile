@@ -1,4 +1,4 @@
-CFLAGS := -m32 -nostdlib -O2 -std=gnu99
+CFLAGS := -m32 -nostdlib -O3 -fno-builtin -std=gnu99
 
 all: test.s test
 

@@ -20,8 +20,15 @@ void _start() {
 
     pad_right(1, write_hex(1, 0xde), ' ', 4);
     write_uint_pad(1, 0xad, 16, '0', 6);
+
     OUTPUT(" 0x");
     write_uint_pad(1, 0xbeef, 16, '-', 2);
+    write_char(1, '\n');
+
+    write_uint_pad(1, 0xdeadbeef, 16, '-', 8);
+    write_char(1, '\n');
+
+    pad_right(1, write_hex(1, 0xdeadbeef), '-', 8);
     write_char(1, '\n');
 
     write_hex(1, 0xdeadbeef); write_char(1, '\n');
