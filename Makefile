@@ -1,4 +1,4 @@
-CFLAGS := -m32 -nostdlib -O3
+CFLAGS := -m32 -nostdlib -O2 -std=gnu99
 
 all: test.s test
 
@@ -8,9 +8,15 @@ all: test.s test
 %.s: %.c
 	$(CC) $(CFLAGS) -S -o $@ $<
 
+%: %.c
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
+
 test: test.c
 
 test.s test: mysyscall.h mywrite.h
+
+check: test
+	./$<
 
 clean:
 	rm -f *.s *-pp.c test
