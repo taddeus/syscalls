@@ -64,6 +64,6 @@
         : "%eax", "%ebx", "%ecx", "%edx", "%esi", "%edi"                  \
     )
 
-#define SYSCALL_RET(ret) __asm__ ("" : "=eax"(ret) ::)
+#define SYSCALL_RET(ret) __asm__ ("" : "=a"(ret) ::)
 
 #endif  // _MYSYSCALL_H
